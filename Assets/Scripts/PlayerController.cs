@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (CommonPopup.Instance.IsShowPopup) return; // Can't move when there's pop up
+
         // input
         Vector3 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         float magnitude = Mathf.Abs(moveInput.x);
